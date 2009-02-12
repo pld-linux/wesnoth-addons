@@ -24,6 +24,8 @@ Source55:	http://files.wesnoth.org/addons/%{wesnothver}/Raajal.tar.bz2
 # Source55-md5:	2f0fe25ddc5adaf0af1a0c3722c55b72
 Source56:	http://files.wesnoth.org/addons/%{wesnothver}/The_Three_Elves.tar.bz2
 # Source56-md5:	9c083f06913e56e8de3fa4c0318639d9
+Source57:	http://files.wesnoth.org/addons/%{wesnothver}/Trolls.tar.bz2
+# Source57-md5:	0ec18cd1bb05e4e50b89bf737bc26584
 URL:		http://www.wesnoth.org/addons/1.4/
 Requires:	wesnoth >= %{wesnothver}
 BuildArch:	noarch
@@ -138,6 +140,25 @@ expansion?
 Három tünde kalandjai az északi mocsarakban. Hősökké válnak vagy ők
 lesznek a felelősek az újabb élőhalott invázió miatt?
 
+%package camp-trolls
+Summary:	You are Eag, the leader of a troll tribe
+Summary(hu.UTF-8):	Eag vagy, egy troll törzs vezetője
+Group:		X11/Applications/Games
+
+%description camp-trolls
+You are Eag, the leader of a troll tribe, who lives in a peaceful cave
+farming mushrooms for food. However a scout brings you bad news:
+dwarves are attempting to mine gold and other valuable minerals in the
+cave. They have attacked another tribe that is near you. Hearing the
+news you lead your fighters to help.
+
+%description camp-trolls -l hu.UTF-8
+Eag vagy, egy troll törzs vezetője, akik egy békés barlagban élnek, és
+gombát termesztenek ételnek. Azonban egy hírnök rossz híreket hoz:
+törpök akarnak aranyat és egyéb értékes ásványokat bányászni a
+barlangban. Egy közeli törzset már meg is támadtak. A híreket hallva a
+harcosaidat harcba vezeted.
+
 %prep
 install -d wesnoth-addons
 cd wesnoth-addons
@@ -150,6 +171,7 @@ cd wesnoth-addons
 %{__tar} xf %{SOURCE54}
 %{__tar} xf %{SOURCE55}
 %{__tar} xf %{SOURCE56}
+%{__tar} xf %{SOURCE57}
 
 find -name COPYING.txt -exec rm {} \;
 
@@ -170,6 +192,7 @@ install -d $RPM_BUILD_ROOT/%{wesnothcamp}
 %{__cp} -r Forgotten_Kingdom $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r Raajal $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r The_Three_Elves $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r Trolls $RPM_BUILD_ROOT%{wesnothcamp}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -209,3 +232,7 @@ rm -rf $RPM_BUILD_ROOT
 %files camp-the_three_elves
 %defattr(644,root,root,755)
 %{wesnothcamp}/The_Three_Elves
+
+%files camp-trolls
+%defattr(644,root,root,755)
+%{wesnothcamp}/Trolls
