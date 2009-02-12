@@ -13,6 +13,8 @@ Source50:	http://files.wesnoth.org/addons/1.4/Flight_Freedom_1_3.tar.bz2
 # Source50-md5:	cbf9d0a47784a04224a2b1225517d601
 Source51:	http://files.wesnoth.org/addons/1.4/Dead_Water.tar.bz2
 # Source51-md5:	f50c5a1683a95cdb94680d649fc1e65d
+Source52:	http://files.wesnoth.org/addons/1.4/Elvish_Legacy.tar.bz2
+# Source52-md5:	e3cabb85cd9399141336fe75cdf9d42b
 URL:		http://www.wesnoth.org/addons/1.4/
 Requires:	wesnoth >= 1.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -65,6 +67,18 @@ you repel an undead invasion.
 %description camp-dead_water -l hu.UTF-8
 Vezesd a sellő népet egy élőhalott invázió ellen.
 
+%package camp-elvish_legacy
+Summary:	You must defend your people from orcish raids
+Summary(hu.UTF-8):	Meg kell védened az embereid az orkoktól
+Group:		X11/Applications/Games
+
+%description camp-elvish_legacy
+You must defend your people from orcish raids.
+
+%description camp-elvish_legacy -l hu.UTF-8
+Meg kell védened az embereid az orkoktól.
+
+
 %prep
 install -d wesnoth-addons
 cd wesnoth-addons
@@ -72,6 +86,7 @@ cd wesnoth-addons
 
 %{__tar} xf %{SOURCE50}
 %{__tar} xf %{SOURCE51}
+%{__tar} xf %{SOURCE52}
 
 find -name COPYING.txt -exec rm {} \;
 
@@ -87,6 +102,7 @@ install -d $RPM_BUILD_ROOT/%{wesnothcamp}
 
 %{__cp} -r Flight_Freedom_1_3 $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r Dead_Water $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r Elvish_Legacy $RPM_BUILD_ROOT%{wesnothcamp}
 
 
 %clean
@@ -107,3 +123,7 @@ rm -rf $RPM_BUILD_ROOT
 %files camp-dead_water
 %defattr(644,root,root,755)
 %{wesnothcamp}/Dead_Water
+
+%files camp-elvish_legacy
+%defattr(644,root,root,755)
+%{wesnothcamp}/Elvish_Legacy
