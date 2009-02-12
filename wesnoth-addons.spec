@@ -134,7 +134,7 @@ Three elves have just begun their adventure in the northern swampland.
 Will they become heroes or will they be responsible for another undead
 expansion?
 
-%description camp-the_three_elves
+%description camp-the_three_elves -l hu.UTF-8
 Három tünde kalandjai az északi mocsarakban. Hősökké válnak vagy ők
 lesznek a felelősek az újabb élőhalott invázió miatt?
 
