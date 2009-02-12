@@ -20,8 +20,13 @@ Source53:	http://files.wesnoth.org/addons/%{wesnothver}/Bad_Moon_Rising.tar.bz2
 # Source53-md5:	c9c01b5a4d795f8f718b156860a5bae0
 Source54:	http://files.wesnoth.org/addons/%{wesnothver}/Forgotten_Kingdom.tar.bz2
 # Source54-md5:	3b35f5651eb4bb4d28a1d83b03f632c3
+Source55:	http://files.wesnoth.org/addons/%{wesnothver}/Raajal.tar.bz2
+# Source55-md5:	2f0fe25ddc5adaf0af1a0c3722c55b72
+Source56:	http://files.wesnoth.org/addons/%{wesnothver}/The_Three_Elves.tar.bz2
+# Source56-md5:	9c083f06913e56e8de3fa4c0318639d9
 URL:		http://www.wesnoth.org/addons/1.4/
 Requires:	wesnoth >= %{wesnothver}
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define wesnothdir %{_datadir}/wesnoth/data
@@ -108,6 +113,30 @@ underground and discover an ancient power long forgotten.
 Segíts Orlog-nak, a troll főnöknek az embereit biztonságba vezényelni
 a föld alatt és felfedezni az ősí erőt, amelyet rég elfeledtek.
 
+%package camp-raajal
+Summary:	An Arch Mage with the power of resurrection seeks a new apprentice
+Summary(hu.UTF-8):	Egy mágus a feltámasztás erejével egy új tanoncot keres
+Group:		X11/Applications/Games
+
+%description camp-raajal
+An Arch Mage with the power of resurrection seeks a new apprentice.
+
+%description camp-raajal -l hu.UTF-8
+Egy mágus a feltámasztás erejével egy új tanoncot keres.
+
+%package camp-the_three_elves
+Summary:	Three elves have just begun their adventure in the northern swampland
+Summary(hu.UTF-8):	Három tünde kalandjai az északi mocsarakban
+Group:		X11/Applications/Games
+
+%description camp-the_three_elves
+Three elves have just begun their adventure in the northern swampland.
+Will they become heroes or will they be responsible for another undead
+expansion?
+
+%description camp-the_three_elves
+Három tünde kalandjai az északi mocsarakban. Hősökké válnak vagy ők
+lesznek a felelősek az újabb élőhalott invázió miatt?
 
 %prep
 install -d wesnoth-addons
@@ -119,6 +148,8 @@ cd wesnoth-addons
 %{__tar} xf %{SOURCE52}
 %{__tar} xf %{SOURCE53}
 %{__tar} xf %{SOURCE54}
+%{__tar} xf %{SOURCE55}
+%{__tar} xf %{SOURCE56}
 
 find -name COPYING.txt -exec rm {} \;
 
@@ -137,6 +168,8 @@ install -d $RPM_BUILD_ROOT/%{wesnothcamp}
 %{__cp} -r Elvish_Legacy $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r Bad_Moon_Rising $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r Forgotten_Kingdom $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r Raajal $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r The_Three_Elves $RPM_BUILD_ROOT%{wesnothcamp}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -168,3 +201,11 @@ rm -rf $RPM_BUILD_ROOT
 %files camp-forgotten_kingdom
 %defattr(644,root,root,755)
 %{wesnothcamp}/Forgotten_Kingdom
+
+%files camp-raajal
+%defattr(644,root,root,755)
+%{wesnothcamp}/Raajal
+
+%files camp-the_three_elves
+%defattr(644,root,root,755)
+%{wesnothcamp}/The_Three_Elves
