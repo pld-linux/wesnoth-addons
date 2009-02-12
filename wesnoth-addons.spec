@@ -26,6 +26,8 @@ Source56:	http://files.wesnoth.org/addons/%{wesnothver}/The_Three_Elves.tar.bz2
 # Source56-md5:	9c083f06913e56e8de3fa4c0318639d9
 Source57:	http://files.wesnoth.org/addons/%{wesnothver}/Trolls.tar.bz2
 # Source57-md5:	0ec18cd1bb05e4e50b89bf737bc26584
+Source58:	http://files.wesnoth.org/addons/%{wesnothver}/Hallowed_Glade.tar.bz2
+# Source58-md5:	1f7e93aac990a9464b468eaf1324f55b
 URL:		http://www.wesnoth.org/addons/1.4/
 Requires:	wesnoth >= %{wesnothver}
 BuildArch:	noarch
@@ -159,6 +161,17 @@ törpök akarnak aranyat és egyéb értékes ásványokat bányászni a
 barlangban. Egy közeli törzset már meg is támadtak. A híreket hallva a
 harcosaidat harcba vezeted.
 
+%package camp-hallowed_glade
+Summary:	Fight against the forces of darkness to recover a dangerous artifact
+Summary(hu.UTF-8):	Harc a sötétség serege ellen egy veszélyes lelet újrateremtéséért
+Group:		X11/Applications/Games
+
+%description camp-hallowed_glade
+Fight against the forces of darkness to recover a dangerous artifact.
+
+%description camp-hallowed_glade -l hu.UTF-8
+Harc a sötétség serege ellen egy veszélyes lelet újrateremtéséért.
+
 %prep
 install -d wesnoth-addons
 cd wesnoth-addons
@@ -172,6 +185,7 @@ cd wesnoth-addons
 %{__tar} xf %{SOURCE55}
 %{__tar} xf %{SOURCE56}
 %{__tar} xf %{SOURCE57}
+%{__tar} xf %{SOURCE58}
 
 find -name COPYING.txt -exec rm {} \;
 
@@ -193,6 +207,7 @@ install -d $RPM_BUILD_ROOT/%{wesnothcamp}
 %{__cp} -r Raajal $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r The_Three_Elves $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r Trolls $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r Hallowed_Glade $RPM_BUILD_ROOT%{wesnothcamp}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -236,3 +251,7 @@ rm -rf $RPM_BUILD_ROOT
 %files camp-trolls
 %defattr(644,root,root,755)
 %{wesnothcamp}/Trolls
+
+%files camp-hallowed_glade
+%defattr(644,root,root,755)
+%{wesnothcamp}/Hallowed_Glade
