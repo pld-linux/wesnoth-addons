@@ -225,23 +225,23 @@ Follow the adventures of The Griffoon Lads in the Far North.
 Kövesd a Griffoon Fiúkat a Messzi Északon.
 
 %prep
-install -d wesnoth-addons
-cd wesnoth-addons
-%{__tar} xf %{SOURCE0}
+%setup -c -T 
 
-%{__tar} xf %{SOURCE50}
-%{__tar} xf %{SOURCE51}
-%{__tar} xf %{SOURCE52}
-%{__tar} xf %{SOURCE53}
-%{__tar} xf %{SOURCE54}
-%{__tar} xf %{SOURCE55}
-%{__tar} xf %{SOURCE56}
-%{__tar} xf %{SOURCE57}
-%{__tar} xf %{SOURCE58}
-%{__tar} xf %{SOURCE59}
-%{__tar} xf %{SOURCE60}
-%{__tar} xf %{SOURCE61}
-%{__tar} xf %{SOURCE62}
+%setup -D -T -a 0
+
+%setup -D -T -a 50
+%setup -D -T -a 51
+%setup -D -T -a 52
+%setup -D -T -a 53
+%setup -D -T -a 54
+%setup -D -T -a 55
+%setup -D -T -a 56
+%setup -D -T -a 57
+%setup -D -T -a 58
+%setup -D -T -a 59
+%setup -D -T -a 60
+%setup -D -T -a 61
+%setup -D -T -a 62
 
 find -name COPYING.txt -exec rm {} \;
 
@@ -249,7 +249,7 @@ find -name COPYING.txt -exec rm {} \;
 
 %install
 rm -rf $RPM_BUILD_ROOT
-cd wesnoth-addons
+
 install -d $RPM_BUILD_ROOT/%{wesnothmulti}
 install -d $RPM_BUILD_ROOT/%{wesnothcamp}
 
