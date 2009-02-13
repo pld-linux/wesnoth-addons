@@ -225,24 +225,7 @@ Follow the adventures of The Griffoon Lads in the Far North.
 Kövesd a Griffoon Fiúkat a Messzi Északon.
 
 %prep
-%setup -c -T 
-
-%setup -D -T -a 0
-
-%setup -D -T -a 50
-%setup -D -T -a 51
-%setup -D -T -a 52
-%setup -D -T -a 53
-%setup -D -T -a 54
-%setup -D -T -a 55
-%setup -D -T -a 56
-%setup -D -T -a 57
-%setup -D -T -a 58
-%setup -D -T -a 59
-%setup -D -T -a 60
-%setup -D -T -a 61
-%setup -D -T -a 62
-
+%setup -q -c -a0 -a50 -a51 -a52 -a53 -a54 -a55 -a56 -a57 -a58 -a59 -a60 -a61 -a62
 find -name COPYING.txt -exec rm {} \;
 
 %build
