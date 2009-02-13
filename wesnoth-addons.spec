@@ -1,6 +1,6 @@
 %define wesnothver 1.4
 Summary:	Additional stuffs (maps, scenarios, eras, campaigns) for Wesnoth
-Summary(hu.UTF-8):	Bővítések Wesnoth-hoz (térképek, küldetések, korok)
+Summary(hu.UTF-8):	Kiegészítők Wesnoth-hoz (térképek, küldetések, korok)
 Name:		wesnoth-addons
 Version:	1.0
 Release:	0.1
