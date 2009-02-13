@@ -28,6 +28,14 @@ Source57:	http://files.wesnoth.org/addons/%{wesnothver}/Trolls.tar.bz2
 # Source57-md5:	0ec18cd1bb05e4e50b89bf737bc26584
 Source58:	http://files.wesnoth.org/addons/%{wesnothver}/Hallowed_Glade.tar.bz2
 # Source58-md5:	1f7e93aac990a9464b468eaf1324f55b
+Source59:	http://files.wesnoth.org/addons/%{wesnothver}/Attack_of_the_Undead.tar.bz2
+# Source59-md5:	accb8cf6a0e40a8967e0e1b310db5fd4
+Source60:	http://files.wesnoth.org/addons/%{wesnothver}/Children_of_Dragons.tar.bz2
+# Source60-md5:	367f07f62957d1efa8f987376b784927
+Source61:	http://files.wesnoth.org/addons/%{wesnothver}/Forgotten_Legacy.tar.bz2
+# Source61-md5:	2701c604d16783cd1e9f8f5a220ba2cc
+Source62:	http://files.wesnoth.org/addons/%{wesnothver}/Griffoon_Lads.tar.bz2
+# Source62-md5:	59d5795e79b5aea75a7578e061c7ffc5
 URL:		http://www.wesnoth.org/addons/1.4/
 Requires:	wesnoth >= %{wesnothver}
 BuildArch:	noarch
@@ -172,6 +180,50 @@ Fight against the forces of darkness to recover a dangerous artifact.
 %description camp-hallowed_glade -l hu.UTF-8
 Harc a sötétség serege ellen egy veszélyes lelet újrateremtéséért.
 
+%package camp-attack_of_the_undead
+Summary:	Play as a mage to protect your city from the undead
+Summary(hu.UTF-8):	Egy mágusként kell megvédened a városodat az élőholtak ellen
+Group:		X11/Applications/Games
+
+%description camp-attack_of_the_undead
+Play as a mage to protect your city from the undead.
+
+%description camp-attack_of_the_undead -l hu.UTF-8
+Egy mágusként kell megvédened a városodat az élőholtak ellen.
+
+%package camp-children_of_dragons
+Summary:	Lead the Drakes as they search for a new homeland
+Summary(hu.UTF-8):	Vezesd a sárkányokat új haza kereséséhez
+Group:		X11/Applications/Games
+
+%description camp-children_of_dragons
+Lead the Drakes as they search for a new homeland.
+
+%description camp-children_of_dragons
+Vezesd a sárkányokat új haza kereséséhez.
+
+%package camp-the_forgotten_legacy
+Summary:	This is a campaign focusing on the saurian faction
+Summary(hu.UTF-8):	Ez egy küldetés a gyík fajra összpontosítva
+Group:		X11/Applications/Games
+
+%description camp-the_forgotten_legacy
+This is a campaign focusing on the saurian faction.
+
+%description camp-the_forgotten_legacy
+Ez egy küldetés a gyík fajra összpontosítva.
+
+%package camp-the_griffon_lads
+Summary:	Follow the adventures of The Griffoon Lads in the Far North
+Summary(hu.UTF-8):	Kövesd a Griffoon Fiúkat a Messzi Északon
+Group:		X11/Applications/Games
+
+%description camp-the_griffon_lads
+Follow the adventures of The Griffoon Lads in the Far North.
+
+%description camp-the_griffon_lads -l hu.UTF-8
+Kövesd a Griffoon Fiúkat a Messzi Északon.
+
 %prep
 install -d wesnoth-addons
 cd wesnoth-addons
@@ -186,6 +238,10 @@ cd wesnoth-addons
 %{__tar} xf %{SOURCE56}
 %{__tar} xf %{SOURCE57}
 %{__tar} xf %{SOURCE58}
+%{__tar} xf %{SOURCE59}
+%{__tar} xf %{SOURCE60}
+%{__tar} xf %{SOURCE61}
+%{__tar} xf %{SOURCE62}
 
 find -name COPYING.txt -exec rm {} \;
 
@@ -208,6 +264,10 @@ install -d $RPM_BUILD_ROOT/%{wesnothcamp}
 %{__cp} -r The_Three_Elves $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r Trolls $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r Hallowed_Glade $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r Attack_of_the_Undead $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r Children_of_Dragons $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r Forgotten_Legacy $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r Griffoon_Lads $RPM_BUILD_ROOT%{wesnothcamp}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -255,3 +315,19 @@ rm -rf $RPM_BUILD_ROOT
 %files camp-hallowed_glade
 %defattr(644,root,root,755)
 %{wesnothcamp}/Hallowed_Glade
+
+%files camp-attack_of_the_undead
+%defattr(644,root,root,755)
+%{wesnothcamp}/Attack_of_the_Undead
+
+%files camp-children_of_dragons
+%defattr(644,root,root,755)
+%{wesnothcamp}/Children_of_Dragons
+
+%files camp-the_forgotten_legacy
+%defattr(644,root,root,755)
+%{wesnothcamp}/Forgotten_Legacy
+
+%files camp-the_griffon_lads
+%defattr(644,root,root,755)
+%{wesnothcamp}/Griffoon_Lads
