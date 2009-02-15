@@ -1,6 +1,7 @@
 %define wesnothver 1.4
 Summary:	Additional stuffs (maps, scenarios, eras, campaigns) for Wesnoth
 Summary(hu.UTF-8):	Kiegészítők Wesnoth-hoz (térképek, küldetések, korok)
+Summary(pl.UTF-8):	Dodatki do Wesnoth (mapy, scenariusze, epoki, kampanie)
 Name:		wesnoth-addons
 Version:	1.0
 Release:	0.1
@@ -46,10 +47,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define wesnothcamp %{wesnothdir}/campaigns
 
 %description
-Additional stuffs (maps, scenarios, eras,campaigns) for Wesnoth.
+Additional stuffs (maps, scenarios, eras, campaigns) for Wesnoth.
 
 %description -l hu.UTF-8
 Bővítések Wesnoth-hoz (térképek, küldetések, korok).
+
+%description -l pl.UTF-8
+Dodatki do gry Wesnoth (mapy, scenariusze, epoki, kampanie).
 
 %package mp-totn
 Summary:	Temples of the Nagas is a team based MP survival game designed for four players
@@ -67,6 +71,7 @@ játékosra.
 %package camp-flight_to_freedom
 Summary:	Flight to Freedom chronicles the story of the drake hero Malakar
 Summary(hu.UTF-8):	Flight to Freedom Malakar sárkány hős krónikáit meséli el
+Summary(pl.UTF-8):	Flight to Freedom campania opisująca historię drake'a Malakara
 Group:		X11/Applications/Games
 
 %description camp-flight_to_freedom
@@ -77,9 +82,14 @@ him and his Drake tribe to freedom from humanity's slavery!
 Flight to Freedom Malakar sárkány hős krónikáit meséli el. Vezesd őt
 és a sárkányai megalapítják a szabadságot az emberek rabszolgása után!
 
+%description camp-flight_to_freedom -l pl.UTF-8
+Flight to Freedom to campania opowiadadająca historię bohatera drake'ów -
+Malakara. Poprowadź jego, oraz jego plemię ku wolności z ludzkiej niewoli!
+
 %package camp-dead_water
 Summary:	Lead your merfolk on a mission to convince a powerful mermaid to help you repel an undead invasion
 Summary(hu.UTF-8):	Vezesd a sellő népet egy élőhalott invázió ellen
+Summary(pl.UTF-8):	Przekonaj potężną syrenę aby pomogła Twojemu morskiemu ludowi odeprzeć inwazję umarlaków
 Group:		X11/Applications/Games
 Group:		X11/Applications/Games
 
@@ -90,9 +100,14 @@ you repel an undead invasion.
 %description camp-dead_water -l hu.UTF-8
 Vezesd a sellő népet egy élőhalott invázió ellen.
 
+%description camp-dead_water
+Poprowadź Twój morski lud na misję. Przekonaj potężną syrenę, aby pomogła Ci
+odeprzeć inwazję umarlaków.
+
 %package camp-elvish_legacy
 Summary:	You must defend your people from orcish raids
 Summary(hu.UTF-8):	Meg kell védened az embereid az orkoktól
+Summary(pl.UTF-8):	Obroń swój lud przed atakami orków
 Group:		X11/Applications/Games
 
 %description camp-elvish_legacy
@@ -101,9 +116,14 @@ You must defend your people from orcish raids.
 %description camp-elvish_legacy -l hu.UTF-8
 Meg kell védened az embereid az orkoktól.
 
+%description camp-elvish_legacy -l pl.UTF-8
+W tej kampani wcielisz się w rolę przywódcy elfów. Twoim zadaniem będzie
+ochronić Twój lud przed atakami orków.
+
 %package camp-bad_moon_rising
 Summary:	Officer Lorenzon leads a revolution against the brutal Prince
 Summary(hu.UTF-8):	Lorenzon kapitány egy lázadást vezet a kegyetlen Herceg ellen
+Summary(pl.UTF-8):	Oficer Lorenzon staje na czele rewolucji przeciwko złemu księciu
 Group:		X11/Applications/Games
 
 %description camp-bad_moon_rising
@@ -112,22 +132,31 @@ Officer Lorenzon leads a revolution against the brutal Prince.
 %description camp-bad_moon_rising -l hu.UTF-8
 Lorenzon kapitány egy lázadást vezet a kegyetlen Herceg ellen.
 
+%description camp-bad_moon_rising -l pl.UTF-8
+Jako oficer Lorenzon staniesz na czele rewolucji przeciwko złemu księciu.
+
 %package camp-forgotten_kingdom
 Summary:	Help Orlog, a troll chieftan
 Summary(hu.UTF-8):	Segíts Orlog-nak, egy troll főnöknek
+Summary(pl.UTF-8):	Pomóż Orlogowi, hersztowi trolli
 Group:		X11/Applications/Games
 
 %description camp-forgotten_kingdom
 Help Orlog, a troll chieftan, lead his people to safety in the
 underground and discover an ancient power long forgotten.
 
-%description camp-forgotten_kingdom
+%description camp-forgotten_kingdom -l hu.UTF-8
 Segíts Orlog-nak, a troll főnöknek az embereit biztonságba vezényelni
 a föld alatt és felfedezni az ősí erőt, amelyet rég elfeledtek.
+
+%description camp-forgotten_kingdom -l pl.UTF-8
+Pomóż Orologi, hersztowi trolli. Poprowadź jego ludzi bezpiecznie przez
+podziemia i odkryj zapomniane antyczne moce.
 
 %package camp-raajal
 Summary:	An Arch Mage with the power of resurrection seeks a new apprentice
 Summary(hu.UTF-8):	Egy mágus a feltámasztás erejével egy új tanoncot keres
+Summary(pl.UTF-8):	Arcymag posiadający moc wskrzeszania zmarłych szuka praktykanta
 Group:		X11/Applications/Games
 
 %description camp-raajal
@@ -136,9 +165,13 @@ An Arch Mage with the power of resurrection seeks a new apprentice.
 %description camp-raajal -l hu.UTF-8
 Egy mágus a feltámasztás erejével egy új tanoncot keres.
 
+%description camp-raajal -l pl.UTF-8
+Arcymag posiadający moc wskrzeszania zmarłych szuka praktykanta
+
 %package camp-the_three_elves
 Summary:	Three elves have just begun their adventure in the northern swampland
 Summary(hu.UTF-8):	Három tünde kalandjai az északi mocsarakban
+Summary(pl.UTF-8):	Trzej elfowie właśnie rozpoczęli swoją podróż przez północne bagna
 Group:		X11/Applications/Games
 
 %description camp-the_three_elves
@@ -150,9 +183,15 @@ expansion?
 Három tünde kalandjai az északi mocsarakban. Hősökké válnak vagy ők
 lesznek a felelősek az újabb élőhalott invázió miatt?
 
+%description camp-the_three_elves -l pl.UTF-8
+Trzej elfowie właśnie rozpoczęli swoją przygodę w północnych bagnach. Czy
+staną się bohaterami, czy też będą odpowiedzialni za kolejną inwazję
+umarlaków?
+
 %package camp-trolls
 Summary:	You are Eag, the leader of a troll tribe
 Summary(hu.UTF-8):	Eag vagy, egy troll törzs vezetője
+Summary(pl.UTF-8):	Wcielasz się w Eaga, przywódcę plemienia trolli
 Group:		X11/Applications/Games
 
 %description camp-trolls
@@ -169,9 +208,17 @@ törpök akarnak aranyat és egyéb értékes ásványokat bányászni a
 barlangban. Egy közeli törzset már meg is támadtak. A híreket hallva a
 harcosaidat harcba vezeted.
 
+%description camp-trolls -l pl.UTF-8
+W tej kampanii wcielasz się w Eaga, przywódcę pokojowego plemienia trolli, które
+zamieszkuje jaskinię i zajmuje się uprawą grzybów. Pewnego dnia zwiadowca
+przynosi Ci złe wieści: krasnoludy zamierzają wydobywać złoto i inne cenne
+minerały w Twojej grocie. Zaatakowali już inne plemię w Twojej okolicy. Musisz
+poprowadzić Twoje plemię do walki.
+
 %package camp-hallowed_glade
 Summary:	Fight against the forces of darkness to recover a dangerous artifact
 Summary(hu.UTF-8):	Harc a sötétség serege ellen egy veszélyes lelet újrateremtéséért
+Summary(pl.UTF-8):	Walcz przeciwko siłom ciemności, aby odzyskać niebezpieczny artefakt
 Group:		X11/Applications/Games
 
 %description camp-hallowed_glade
@@ -180,9 +227,13 @@ Fight against the forces of darkness to recover a dangerous artifact.
 %description camp-hallowed_glade -l hu.UTF-8
 Harc a sötétség serege ellen egy veszélyes lelet újrateremtéséért.
 
+%description camp-hallowed_glade -l pl.UTF-8
+Walcz przeciwko siłom ciemności, aby odzyskać niebezpieczny artefakt.
+
 %package camp-attack_of_the_undead
 Summary:	Play as a mage to protect your city from the undead
 Summary(hu.UTF-8):	Egy mágusként kell megvédened a városodat az élőholtak ellen
+Summary(pl.UTF-8):	Jako mag ochroń swoje miasto przed umarlakami
 Group:		X11/Applications/Games
 
 %description camp-attack_of_the_undead
@@ -191,31 +242,43 @@ Play as a mage to protect your city from the undead.
 %description camp-attack_of_the_undead -l hu.UTF-8
 Egy mágusként kell megvédened a városodat az élőholtak ellen.
 
+%description camp-attack_of_the_undead -l pl.UTF-8
+Wciel się w rolę maga, którego zadaniem jest ochrona miasta przed umarlakami.
+
 %package camp-children_of_dragons
 Summary:	Lead the Drakes as they search for a new homeland
 Summary(hu.UTF-8):	Vezesd a sárkányokat új haza kereséséhez
+Summary(pl.UTF-8):	Poprowadź Drak'ów w ich poszukiwaniach nowej ojczyzny
 Group:		X11/Applications/Games
 
 %description camp-children_of_dragons
 Lead the Drakes as they search for a new homeland.
 
-%description camp-children_of_dragons
+%description camp-children_of_dragons -l hu.UTF-8
 Vezesd a sárkányokat új haza kereséséhez.
+
+%description camp-children_of_dragons -l pl.UTF-8
+Poprowadź Drak'ów w ich poszukiwaniach nowej ojczyzny.
 
 %package camp-the_forgotten_legacy
 Summary:	This is a campaign focusing on the saurian faction
 Summary(hu.UTF-8):	Ez egy küldetés a gyík fajra összpontosítva
+Summary(pl.UTF-8):	Campania opisująca lud jaszczurów
 Group:		X11/Applications/Games
 
 %description camp-the_forgotten_legacy
 This is a campaign focusing on the saurian faction.
 
-%description camp-the_forgotten_legacy
+%description camp-the_forgotten_legacy -l hu.UTF-8
 Ez egy küldetés a gyík fajra összpontosítva.
+
+%description camp-the_forgotten_legacy -l pl.UTF-8
+Akcja tej kampanii skupia się na historii ludu jaszczurów.
 
 %package camp-the_griffon_lads
 Summary:	Follow the adventures of The Griffoon Lads in the Far North
 Summary(hu.UTF-8):	Kövesd a Griffoon Fiúkat a Messzi Északon
+Summary(pl.UTF-8):	Przeżyj przygody Młodzieńców Gryfów na Dalekiej Północy
 Group:		X11/Applications/Games
 
 %description camp-the_griffon_lads
@@ -223,6 +286,9 @@ Follow the adventures of The Griffoon Lads in the Far North.
 
 %description camp-the_griffon_lads -l hu.UTF-8
 Kövesd a Griffoon Fiúkat a Messzi Északon.
+
+%description camp-the_griffon_lads -l pl.UTF-8
+Przeżyj przygody Młodzieńców Gryfów na Dalekiej Północy.
 
 %prep
 %setup -q -c -a0 -a50 -a51 -a52 -a53 -a54 -a55 -a56 -a57 -a58 -a59 -a60 -a61 -a62
