@@ -100,7 +100,7 @@ you repel an undead invasion.
 %description camp-dead_water -l hu.UTF-8
 Vezesd a sellő népet egy élőhalott invázió ellen.
 
-%description camp-dead_water
+%description camp-dead_water -l pl.UTF-8
 Poprowadź Twój morski lud na misję. Przekonaj potężną syrenę, aby pomogła Ci
 odeprzeć inwazję umarlaków.
 
