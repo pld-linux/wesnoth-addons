@@ -43,6 +43,14 @@ Source64:	http://files.wesnoth.org/addons/%{wesnothver}/Story_of_Wose.tar.bz2
 # Source64-md5:	e2f0d52d1ac2330b3055443aef9ba227
 Source65:	http://files.wesnoth.org/addons/%{wesnothver}/Sceptre_of_Life.tar.bz2
 # Source65-md5:	d3b2c5f5fe038089d09fe2d84d771b05
+Source66:	http://files.wesnoth.org/addons/%{wesnothver}/Fiery_Menace.tar.bz2
+# Source66-md5:	ebac0984a1315d395d7995d9267c211e
+Source67:	http://files.wesnoth.org/addons/%{wesnothver}/Delfadors_Memoirs.tar.bz2
+# Source67-md5:	9f2abced34056e14b3737012ec3e8f67
+Source68:	http://files.wesnoth.org/addons/%{wesnothver}/The_Dark_Hordes.tar.bz2
+# Source68-md5:	201bebc89509fc81b98adc44a4fe7424
+Source69:	http://files.wesnoth.org/addons/%{wesnothver}/Broken_Valley.tar.bz2
+# Source69-md5:	313287db6950e177c0c195845d08bd8a
 URL:		http://www.wesnoth.org/addons/1.6/
 Requires:	wesnoth >= %{wesnothver}
 BuildArch:	noarch
@@ -342,8 +350,48 @@ Northland skirmish. The small choices he makes have far-reaching
 consequences as the Sceptre of Life is unveiled in a desparate, dying
 land.
 
+%package camp-fiery_menace
+Summary:	Fiery Menace
+Group:		X11/Applications/Games
+
+%description camp-fiery_menace
+Stop them! They are coming! Experience this adventure-style campaign
+centering on Drakes and Humans.
+
+%package camp-delfadors_memoirs
+Summary:	Delfadors Memoirs
+Summary(hu.UTF-8):	Delfador emlékiratai
+Group:		X11/Applications/Games
+
+%description camp-delfadors_memoirs
+Wesnoth seems to be slipping inexorably into chaos, as marauding orcs
+pour south across the Great River, and mysterious and deadly creatures
+roam the night. Who is the shadowy Iliah-Malal? Can you defeat him
+before he destroys all life in Wesnoth?
+
+%package camp-the_dark_hordes
+Summary:	The Dark Hordes
+Summary(hu.UTF-8):	A Sötét Hordák
+Group:		X11/Applications/Games
+
+%description camp-the_dark_hordes
+Lead fugitive dark sorcerer Gwiti Ha'atel to mastery of the undead
+hordes. Nine playable scenarios so far.
+
+%package camp-broken_valley
+Summary:	Broken Valley
+Group:		X11/Applications/Games
+
+%description camp-broken_valley
+A highly alpha campaign about the beginning of a great war on another
+continent. The player takes part as the dwarvern character
+Zyancordorza and his allies as they discover a deep plot by a dark
+elven sorcerer. Future plans include a detailed history, cultures, and
+legends for each of the areas and people mentioned, and some for the
+ones never even hinted at.
+
 %prep
-%setup -q -c -a0 -a50 -a51 -a52 -a53 -a54 -a55 -a56 -a58 -a59 -a60 -a61 -a62 -a63 -a64 -a65
+%setup -q -c -a0 -a50 -a51 -a52 -a53 -a54 -a55 -a56 -a58 -a59 -a60 -a61 -a62 -a63 -a64 -a65 -a66 -a67 -a68 -a69
 find -name COPYING.txt -exec rm {} \;
 
 %install
@@ -370,6 +418,10 @@ install -d $RPM_BUILD_ROOT/%{wesnothcamp}
 %{__cp} -r Invasion_from_the_Unknown $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r Story_of_Wose $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r Sceptre_of_Life $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r Fiery_Menace $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r Delfadors_Memoirs $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r The_Dark_Hordes $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r Broken_Valley $RPM_BUILD_ROOT%{wesnothcamp}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -445,3 +497,19 @@ rm -rf $RPM_BUILD_ROOT
 %files camp-sceptre_of_life
 %defattr(644,root,root,755)
 %{wesnothcamp}/Sceptre_of_Life
+
+%files camp-fiery_menace
+%defattr(644,root,root,755)
+%{wesnothcamp}/Fiery_Menace
+
+%files camp-delfadors_memoirs
+%defattr(644,root,root,755)
+%{wesnothcamp}/Delfadors_Memoirs
+
+%files camp-the_dark_hordes
+%defattr(644,root,root,755)
+%{wesnothcamp}/The_Dark_Hordes
+
+%files camp-broken_valley
+%defattr(644,root,root,755)
+%{wesnothcamp}/Broken_Valley
