@@ -1,4 +1,4 @@
-%define wesnothver 1.4
+%define wesnothver 1.6
 Summary:	Additional stuffs (maps, scenarios, eras, campaigns) for Wesnoth
 Summary(hu.UTF-8):	Kiegészítők Wesnoth-hoz (térképek, küldetések, korok)
 Summary(pl.UTF-8):	Dodatki do Wesnoth (mapy, scenariusze, epoki, kampanie)
@@ -37,7 +37,13 @@ Source61:	http://files.wesnoth.org/addons/%{wesnothver}/Forgotten_Legacy.tar.bz2
 # Source61-md5:	2701c604d16783cd1e9f8f5a220ba2cc
 Source62:	http://files.wesnoth.org/addons/%{wesnothver}/Griffoon_Lads.tar.bz2
 # Source62-md5:	59d5795e79b5aea75a7578e061c7ffc5
-URL:		http://www.wesnoth.org/addons/1.4/
+Source63:	http://files.wesnoth.org/addons/%{wesnothver}/Invasion_from_the_Unknown.tar.bz2
+# Source63-md5:	7f33e944fc9132ddd4c1bb30483c65a3
+Source64:	http://files.wesnoth.org/addons/%{wesnothver}/Story_of_Wose.tar.bz2
+# Source64-md5:	e2f0d52d1ac2330b3055443aef9ba227
+Source65:	http://files.wesnoth.org/addons/%{wesnothver}/Sceptre_of_Life.tar.bz2
+# Source65-md5:	d3b2c5f5fe038089d09fe2d84d771b05
+URL:		http://www.wesnoth.org/addons/1.6/
 Requires:	wesnoth >= %{wesnothver}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -298,8 +304,46 @@ Kövesd a Griffoon Fiúkat a Messzi Északon.
 %description camp-the_griffon_lads -l pl.UTF-8
 Przeżyj przygody Młodzieńców Gryfów na Dalekiej Północy.
 
+%package camp-invasion_from_the_unknown
+Summary:	Invasion from the Unknown
+Summary(hu.UTF-8):	Invázió az ismeretlenből
+Group:		X11/Applications/Games
+
+%description camp-invasion_from_the_unknown
+Long after the Fall, the last forest elves are forced to abandon their
+safe valley, and find themselves resorting to the dark means of
+necromancy in order to survive the perils and challenges of this new
+harsh world. Later, as the shadow of Chaos covers the entire
+continent, they prepare a counter-attack to the Empire, with one
+unique goal in their minds: defeat the evil Emperor, whoever it is.
+Lead these courageous living and non-living warriors to the victory,
+and rediscover lost secrets of the history. (Expert level, 2 chapters
+of 13 scenarios each one.)
+
+%package camp-story_of_wose
+Summary:	Story of Wose
+Summary(hu.UTF-8):	Az erdő legendája
+Group:		X11/Applications/Games
+
+%description camp-story_of_wose
+The trees are not always what they seem.
+
+%description camp-story_of_wose -l hu.UTF-8
+A fák nem mindig azok, aminek látszottak.
+
+%package camp-sceptre_of_life
+Summary:	Sceptre of Life
+Summary(hu.UTF-8):	Az élet jogarja
+Group:		X11/Applications/Games
+
+%description camp-sceptre_of_life
+A young doctor in a small, backwoods town is propelled into a
+Northland skirmish. The small choices he makes have far-reaching
+consequences as the Sceptre of Life is unveiled in a desparate, dying
+land.
+
 %prep
-%setup -q -c -a0 -a50 -a51 -a52 -a53 -a54 -a55 -a56 -a57 -a58 -a59 -a60 -a61 -a62
+%setup -q -c -a0 -a50 -a51 -a52 -a53 -a54 -a55 -a56 -a58 -a59 -a60 -a61 -a62 -a63 -a64 -a65
 find -name COPYING.txt -exec rm {} \;
 
 %install
@@ -317,12 +361,15 @@ install -d $RPM_BUILD_ROOT/%{wesnothcamp}
 %{__cp} -r Forgotten_Kingdom $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r Raajal $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r The_Three_Elves $RPM_BUILD_ROOT%{wesnothcamp}
-%{__cp} -r Trolls $RPM_BUILD_ROOT%{wesnothcamp}
+# %%{__cp} -r Trolls $RPM_BUILD_ROOT%%{wesnothcamp}
 %{__cp} -r Hallowed_Glade $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r Attack_of_the_Undead $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r Children_of_Dragons $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r Forgotten_Legacy $RPM_BUILD_ROOT%{wesnothcamp}
 %{__cp} -r Griffoon_Lads $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r Invasion_from_the_Unknown $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r Story_of_Wose $RPM_BUILD_ROOT%{wesnothcamp}
+%{__cp} -r Sceptre_of_Life $RPM_BUILD_ROOT%{wesnothcamp}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -363,9 +410,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{wesnothcamp}/The_Three_Elves
 
-%files camp-trolls
-%defattr(644,root,root,755)
-%{wesnothcamp}/Trolls
+# %files camp-trolls
+# %defattr(644,root,root,755)
+# %{wesnothcamp}/Trolls
 
 %files camp-hallowed_glade
 %defattr(644,root,root,755)
@@ -386,3 +433,15 @@ rm -rf $RPM_BUILD_ROOT
 %files camp-the_griffon_lads
 %defattr(644,root,root,755)
 %{wesnothcamp}/Griffoon_Lads
+
+%files camp-invasion_from_the_unknown
+%defattr(644,root,root,755)
+%{wesnothcamp}/Invasion_from_the_Unknown
+
+%files camp-story_of_wose
+%defattr(644,root,root,755)
+%{wesnothcamp}/Story_of_Wose
+
+%files camp-sceptre_of_life
+%defattr(644,root,root,755)
+%{wesnothcamp}/Sceptre_of_Life
